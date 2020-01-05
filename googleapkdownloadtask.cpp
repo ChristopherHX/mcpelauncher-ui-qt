@@ -1,6 +1,9 @@
 #include "googleapkdownloadtask.h"
 #include "googleplayapi.h"
 #include "googleloginhelper.h"
+#ifdef _WIN32
+#include <io.h>
+#endif
 
 GoogleApkDownloadTask::GoogleApkDownloadTask(QObject *parent) : QObject(parent), m_active(false) {
 }
