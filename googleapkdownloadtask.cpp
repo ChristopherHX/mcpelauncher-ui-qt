@@ -23,6 +23,9 @@ void GoogleApkDownloadTask::start() {
     emit activeChanged();
     m_playApi->getApi()->delivery(m_packageName.toStdString(), m_versionCode, std::string())->call([this](playapi::proto::finsky::response::ResponseWrapper&& resp) {
         auto dd = resp.payload().deliveryresponse().appdeliverydata();
+        if((dd.has_gzippeddownloadurl() ? dd.gzippeddownloadurl() : dd.downloadurl()) == "") {
+            throw std::runtime_error("Please buy Minecraft: Bedrock Edition on the Google Play Store, to be able to download and play the Game.\nIf you are trying to download a Beta Version, make shure to join the Beta program of Minecraft on the Google Play Store and then try again, might take some time.");
+        }
         startDownload(dd);
     }, [this](std::exception_ptr e) {
         try {
