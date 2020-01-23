@@ -48,7 +48,7 @@ ColumnLayout {
                 id: control
                 width: parent.width
                 height: 32
-                font.pointSize: 11
+                font.pixelSize: 11
                 text: modelData.versionName
                 onClicked: versions.currentIndex = index
                 highlighted: ListView.isCurrentItem

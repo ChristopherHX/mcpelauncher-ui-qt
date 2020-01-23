@@ -72,7 +72,7 @@ Window {
 
             Text {
                 text: "Profile Name"
-                font.pointSize: parent.labelFontSize
+                font.pixelSize: parent.labelFontSize
             }
             MTextField {
                 id: profileName
@@ -81,7 +81,7 @@ Window {
 
             Text {
                 text: "Version"
-                font.pointSize: parent.labelFontSize
+                font.pixelSize: parent.labelFontSize
             }
             MComboBox {
                 property var versions: versionManager.versions.getAll().sort(function(a, b) { return b.versionCode - a.versionCode; })
@@ -126,7 +126,7 @@ Window {
             MCheckBox {
                 id: dataDirCheck
                 text: "Data directory"
-                font.pointSize: parent.labelFontSize
+                font.pixelSize: parent.labelFontSize
             }
             RowLayout {
                 Layout.fillWidth: true
@@ -157,7 +157,7 @@ Window {
             MCheckBox {
                 id: windowSizeCheck
                 text: "Window size"
-                font.pointSize: parent.labelFontSize
+                font.pixelSize: parent.labelFontSize
             }
             RowLayout {
                 Layout.fillWidth: true
@@ -172,7 +172,7 @@ Window {
                 }
                 Text {
                     text: "x"
-                    font.pointSize: 11
+                    font.pixelSize: 11
                 }
                 MTextField {
                     id: windowHeight
@@ -197,7 +197,7 @@ Window {
                 }
                 Text {
                     text: "px scale"
-                    font.pointSize: 11
+                    font.pixelSize: 11
                 }
             }
         }

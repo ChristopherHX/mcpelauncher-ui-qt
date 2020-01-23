@@ -8,7 +8,7 @@ T.TextField {
     implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
     implicitHeight: 36
     verticalAlignment: TextInput.AlignVCenter
-    font.pointSize: 13
+    font.pixelSize: 13
     selectByMouse: true
     selectionColor: "#51a063"
 

@@ -79,7 +79,7 @@ ColumnLayout {
             height: parent.height
             text: "A new version of the launcher is available. Click to download the update."
             color: "#0D47A1"
-            font.pointSize: 9
+            font.pixelSize: 9
             font.bold: true
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -149,7 +149,7 @@ ColumnLayout {
                 Text {
                     text: "Profile"
                     color: "#fff"
-                    font.pointSize: 10
+                    font.pixelSize: 10
                 }
 
                 RowLayout {

@@ -39,7 +39,7 @@ T.Button {
             Text {
                 id: textItem
                 text: control.text
-                font.pointSize: 16
+                font.pixelSize: 16
                 opacity: enabled ? 1.0 : 0.3
                 color: "#fff"
                 horizontalAlignment: Text.AlignHCenter
@@ -50,7 +50,7 @@ T.Button {
                 id: subTextItem
                 visible: control.subText.length > 0
                 text: control.subText
-                font.pointSize: 10
+                font.pixelSize: 10
                 opacity: enabled ? 1.0 : 0.3
                 color: "#fff"
                 horizontalAlignment: Text.AlignHCenter

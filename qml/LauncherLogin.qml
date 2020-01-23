@@ -32,7 +32,7 @@ Item {
 
             Text {
                 text: "Sign in"
-                font.pointSize: 22
+                font.pixelSize: 22
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 Layout.alignment: Qt.AlignTop
@@ -43,7 +43,7 @@ Item {
             Text {
                 text: "To use this launcher, you must purchase Minecraft on Google Play and sign in."
                 wrapMode: Text.WordWrap
-                font.pointSize: 12
+                font.pixelSize: 12
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 Layout.alignment: Qt.AlignTop
@@ -76,7 +76,7 @@ Item {
                     text: "Use .apk".toUpperCase()
                     textColor: "#0aa82f"
                     Layout.preferredWidth: alternativeOptions.buttonWidth
-                    font.pointSize: 12
+                    font.pixelSize: 12
                     onClicked: apkImportHelper.pickFile()
                 }
 
@@ -84,7 +84,7 @@ Item {
                     text: "Get help".toUpperCase()
                     textColor: "#0aa82f"
                     Layout.preferredWidth: alternativeOptions.buttonWidth
-                    font.pointSize: 12
+                    font.pixelSize: 12
                     onClicked: Qt.openUrlExternally("https://mcpelauncher.readthedocs.io/en/latest/index.html")
                 }
 
@@ -103,7 +103,7 @@ Item {
 
             Text {
                 text: "Extracting apk"
-                font.pointSize: 18
+                font.pixelSize: 18
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 Layout.alignment: Qt.AlignTop
@@ -129,7 +129,7 @@ Item {
         y: parent.height - height - 10
         width: parent.width
         wrapMode: Text.WordWrap
-        font.pointSize: 10
+        font.pixelSize: 10
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
     }

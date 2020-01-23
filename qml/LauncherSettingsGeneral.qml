@@ -12,7 +12,7 @@ GridLayout {
 
     Text {
         text: "Google Account"
-        font.pointSize: parent.labelFontSize
+        font.pixelSize: parent.labelFontSize
     }
     Item {
         id: item1
@@ -26,7 +26,7 @@ GridLayout {
                 text: googleLoginHelper.account !== null ? googleLoginHelper.account.accountIdentifier : ""
                 id: googleAccountIdLabel
                 Layout.alignment: Qt.AlignRight
-                font.pointSize: 11
+                font.pixelSize: 11
             }
             MButton {
                 Layout.alignment: Qt.AlignRight
@@ -45,7 +45,7 @@ GridLayout {
         Layout.topMargin: 20
         id: autoShowGameLog
         text: "Show log when starting the game"
-        font.pointSize: parent.labelFontSize
+        font.pixelSize: parent.labelFontSize
         Layout.columnSpan: 2
         Component.onCompleted: checked = launcherSettings.startOpenLog
         onCheckedChanged: launcherSettings.startOpenLog = checked
@@ -54,7 +54,7 @@ GridLayout {
     MCheckBox {
         id: hideLauncher
         text: "Hide the launcher when starting the game"
-        font.pointSize: parent.labelFontSize
+        font.pixelSize: parent.labelFontSize
         Layout.columnSpan: 2
         Component.onCompleted: checked = launcherSettings.startHideLauncher
         onCheckedChanged: launcherSettings.startHideLauncher = checked

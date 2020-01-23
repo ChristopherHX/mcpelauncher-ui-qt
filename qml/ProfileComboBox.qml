@@ -63,7 +63,7 @@ MComboBox {
             anchors.rightMargin: parent.padding
             anchors.topMargin: (separator.visible ? separator.height : 0)
             text: modelData
-            font.pointSize: 11
+            font.pixelSize: 11
             verticalAlignment: Text.AlignVCenter
         }
     }

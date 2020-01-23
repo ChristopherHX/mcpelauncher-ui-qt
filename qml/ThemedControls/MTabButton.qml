@@ -24,7 +24,7 @@ T.TabButton {
     contentItem: Text {
         id: textItem
         text: control.text
-        font.pointSize: 11
+        font.pixelSize: 11
         opacity: enabled ? 1.0 : 0.3
         color: "#000"
         horizontalAlignment: Text.AlignHCenter

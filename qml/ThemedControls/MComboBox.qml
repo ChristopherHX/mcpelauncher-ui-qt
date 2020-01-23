@@ -30,7 +30,7 @@ T.ComboBox {
     contentItem: Text {
         id: textItem
         text: control.displayText
-        font.pointSize: 11
+        font.pixelSize: 11
         opacity: enabled ? 1.0 : 0.3
         color: "#000"
         horizontalAlignment: Text.AlignLeft
@@ -41,7 +41,7 @@ T.ComboBox {
     delegate: ItemDelegate {
         width: parent.width
         height: 32
-        font.pointSize: 11
+        font.pixelSize: 11
         text: control.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
         highlighted: control.highlightedIndex === index
     }
