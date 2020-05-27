@@ -41,6 +41,54 @@ GridLayout {
         }
     }
 
+    MComboBox {
+        Layout.columnSpan: 2
+        property var values: gen(googleLoginHelper.getAbis().map(function(x) {
+            return [x];
+        }))
+        property var keys: values.map(function(x) { return x.join(", ");})
+        
+        function gen(a, b, c) {
+            b = b || a
+            c = c || a.length
+            var y = b.reduce(function(o, n) {
+                return o.concat(a.map(function(x) {
+                    return n.indexOf(x[0]) !== -1 ? null : n.concat(x)
+                }).reduce(function(o, n) {
+                    return n === null ? o : o.concat([n])
+                }, []))
+            }, [])
+            return b.concat(c > 1 ? gen(a, y, c - 1) : y)
+        }
+        id: androidabis
+        Layout.fillWidth: true
+        model: {
+            return keys
+        }
+        Component.onCompleted: { 
+            var abi = googleLoginHelper.getDeviceStateABIs().join(", ")
+            //currentIndex = 
+            console.log("abi was :\""+ abi + "\"")
+            var index = keys.indexOf(abi)
+            console.log("index of abi was :\""+ index + "\"")
+            if(index === -1) {
+                console.log("manual search");
+                for(var i = 0; i < keys.length; ++i) {
+                    if(keys[i] === abi) {
+                        console.log("Found at " + i)
+                        index = i
+                        break;
+                    }
+                }
+            }
+            if(index === -1) {
+                console.log("Failed")
+            } else {
+                currentIndex = index
+            }
+        }
+    }
+
     MCheckBox {
         Layout.topMargin: 20
         id: autoShowGameLog
