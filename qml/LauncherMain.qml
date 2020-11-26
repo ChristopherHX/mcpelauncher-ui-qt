@@ -65,6 +65,8 @@ LauncherBase {
                     Component.onCompleted: {
                         setProfile(profileManager.activeProfile)
                         loaded = true
+                        console.log("Screen.pixelDensity:" + Screen.pixelDensity)
+                        console.log("Screen.devicePixelRatio:" + Screen.devicePixelRatio)
                     }
                     onCurrentProfileChanged: {
                         if (loaded && currentProfile !== null)
@@ -75,8 +77,10 @@ LauncherBase {
                 }
 
                 MButton {
-                    implicitWidth: 36
+                    implicitWidth: 36 / Screen.devicePixelRatio
                     Image {
+                        width: 24 / Screen.devicePixelRatio
+                        height: 24 / Screen.devicePixelRatio
                         anchors.centerIn: parent
                         source: "qrc:/Resources/icon-edit.png"
                         smooth: false
@@ -102,7 +106,7 @@ LauncherBase {
             subText: gameLauncher.running ? qsTr("Game is running") : (getDisplayedVersionName() ? ("Minecraft " + getDisplayedVersionName()).toUpperCase() : qsTr("Please wait..."))
             Layout.maximumWidth: 400
             Layout.fillWidth: true
-            Layout.preferredHeight: 70
+            Layout.preferredHeight: 70 / Screen.devicePixelRatio
             Layout.minimumHeight: implicitHeight
             enabled: !(playDownloadTask.active || apkExtractionTask.active || updateChecker.active || !checkSupport()) && (gameLauncher.running || getDisplayedVersionName())
 

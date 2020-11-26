@@ -8,7 +8,7 @@ T.Button {
 
     padding: 8
     implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
-    implicitHeight: 36
+    implicitHeight: 36 / Screen.devicePixelRatio
     baselineOffset: contentItem.y + contentItem.baselineOffset
 
     background: BorderImage {
@@ -16,7 +16,7 @@ T.Button {
         anchors.fill: parent
         source: control.hovered ? "qrc:/Resources/button-active.png" : "qrc:/Resources/button.png"
         smooth: false
-        border { left: 4; top: 4; right: 4; bottom: 4 }
+        border { left: 4 / Screen.devicePixelRatio; top: 4 / Screen.devicePixelRatio; right: 4 / Screen.devicePixelRatio; bottom: 4 / Screen.devicePixelRatio }
         horizontalTileMode: BorderImage.Stretch
         verticalTileMode: BorderImage.Stretch
     }

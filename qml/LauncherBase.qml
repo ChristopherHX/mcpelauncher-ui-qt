@@ -27,22 +27,24 @@ ColumnLayout {
         source: "qrc:/Resources/noise.png"
         Layout.alignment: Qt.AlignTop
         Layout.fillWidth: true
-        Layout.preferredHeight: 100
+        Layout.preferredHeight: title_1.height + 60 / Screen.devicePixelRatio //children[0].children[0].implicitHeight + children[0].children[1].implicitHeight //100 / Screen.devicePixelRatio
 
         RowLayout {
             anchors.fill: parent
 
             ColumnLayout {
+                spacing: 2 / Screen.devicePixelRatio
 
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                 Image {
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     source: "qrc:/Resources/proprietary/minecraft.svg"
-                    sourceSize.height: 44
+                    sourceSize.height: 44 / Screen.devicePixelRatio
                 }
 
                 Text {
+                    id: title_1
                     color: "#ffffff"
                     text: qsTr("Unofficial Linux Launcher")
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -57,11 +59,13 @@ ColumnLayout {
         MButton {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            anchors.rightMargin: 20
-            implicitWidth: 48
-            implicitHeight: 48
+            anchors.rightMargin: 20 / Screen.devicePixelRatio
+            implicitWidth: 48 / Screen.devicePixelRatio
+            implicitHeight: 48 / Screen.devicePixelRatio
             onClicked: launcherSettingsWindow.show()
             Image {
+                width: 28 / Screen.devicePixelRatio
+                height: 28 / Screen.devicePixelRatio
                 anchors.centerIn: parent
                 source: "qrc:/Resources/icon-settings.png"
                 smooth: false
@@ -112,7 +116,7 @@ ColumnLayout {
     Rectangle {
         Layout.alignment: Qt.AlignBottom
         Layout.fillWidth: true
-        Layout.preferredHeight: childrenRect.height + 2 * 5
+        Layout.preferredHeight: childrenRect.height + 2 * 5 / (Screen.devicePixelRatio) 
         color: "#fff"
         visible: progressbarVisible || updateChecker.active
 
