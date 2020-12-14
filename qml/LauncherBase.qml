@@ -164,7 +164,7 @@ ColumnLayout {
         id: updateCheckerConnectorBase
         target: updateChecker
         enabled: false
-        onUpdateError: function(error) {
+        onUpdateError: function (error) {
             updateCheckerConnectorBase.enabled = false
             updateError.text = error
             updateError.open()

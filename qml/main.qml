@@ -237,7 +237,7 @@ Window {
 
     Connections {
         target: gameLogWindow
-        onClosing: {
+        function onClosing() {
             if(!window.visible) {
                 if (gameLauncher.running) {
                     close.accepted = false
