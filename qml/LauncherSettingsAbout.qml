@@ -56,15 +56,15 @@ ColumnLayout {
         id: updateCheckerConnectorSettings
         target: updateChecker
         enabled: false
-        onUpdateError: function(error) {
+        function onUpdateError(error) {
             updateCheckerConnectorSettings.enabled = false
             updateError.text = error
             updateError.open()
         }
-        onUpdateAvailable: function(url) {
+        function onUpdateAvailable(url) {
             columnlayout.updateUrl = url;
         }
-        onUpdateCheck: function(available) {
+        function onUpdateCheck(available) {
             updateCheckerConnectorSettings.enabled = false
             if (available) {
                 updateInfo.text = qsTr("An Update of the Launcher is available for download") + "<br/>" + (columnlayout.updateUrl.length !== 0 ? qsTr("You can download the new Update here: %1").arg(columnlayout.updateUrl) + "<br/>" : "") + qsTr("Do you want to update now?");
@@ -75,6 +75,14 @@ ColumnLayout {
             }
             updateInfo.open()
         }
+    }
+
+    Connections {
+        target: updateChecker
+        enabled: updateCheckerConnectorSettings.enabled
+        onUpdateError: function() { updateCheckerConnectorSettings.onUpdateError.apply(this, arguments); }
+        onUpdateAvailable: function() { updateCheckerConnectorSettings.onUpdateAvailable.apply(this, arguments); }
+        onUpdateCheck: function() { updateCheckerConnectorSettings.onUpdateCheck.apply(this, arguments); }
     }
 
     MessageDialog {
